@@ -1,12 +1,35 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <!-- Start Basic Page -->
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="author" content="Ryan Morrissey">
+    <meta name="keywords" content="ryan,morrissey,family,technology,outdoors,rock climbing,fly fishing,stand up paddleboarding,web apps,open source projects,cooking">
+    <meta name="copyright" content="&copy; 2015">
+    <!-- End Basic Page -->
 
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+    <!-- Start Mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- End Mobile -->
+
+    <!-- Start Font -->
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:400,300,600|Droid+Sans:400,700|Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+    <!-- End Font -->
+
+    <!-- Start CSS -->
+    <link rel="stylesheet" href="{{ "/assets/css/main.min.css" | prepend: site.baseurl }}">
+    <!-- End CSS -->
+
+    <!-- Start Favicon -->
+    <!--
+    <link rel="icon" type="image/png" href="//rymo.io/favicon.png">
+    <link rel="icon" type="image/png" href="//rymo.io/favicon-16x16.png" sizes="16x16">
+    -->
+    <!-- End Favicon -->
+
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+
 </head>

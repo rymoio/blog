@@ -1,0 +1,43 @@
+---
+layout: default
+title: sitemap
+---
+<!-- Start Header -->
+<header class="blog-header">
+    <h1 class="blog-title">sitemap</h1>
+    <p class="lead blog-description">find everything you need</p>
+</header>
+<!-- End Header -->
+
+<!-- Start Content -->
+<h3>categories</h3>
+<ul class="list-unstyled">
+    {% if site.sorted_categories %}
+    {% for category in site.sorted_categories  %}
+    <li><a href="{{ site.categories.url | prepend: site.baseurl }}{{ category.first | slugify }}/">{{ category | first }}</a></li>
+    {% endfor %}
+    {% endif %}
+</ul>
+
+<hr>
+
+<h3>tags</h3>
+<ul class="list-unstyled">
+    {% if site.sorted_tags %}
+    {% for tag in site.sorted_tags %}
+    <li><a href="{{ site.tags.url | prepend: site.baseurl }}{{ tag | first | slugify }}/">{{ tag | first }}</a></li>
+    {% endfor %}
+    {% endif %}
+</ul>
+
+<hr>
+
+<h3>posts</h3>
+<ul class="list-unstyled">
+    {% if site.posts %}
+    {% for post in site.posts %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a> <span class="text-muted">{{ post.date | date: "%b %-d, %Y" }}</span></li>
+    {% endfor %}
+    {% endif %}
+</ul>
+<!-- End Content -->

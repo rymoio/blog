@@ -1,0 +1,14 @@
+{
+  "name": "flat-colors",
+  "homepage": "https://github.com/obibring/flat-ui-colors-sass",
+  "_release": "f4805a43ee",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f4805a43ee9705bcbd0b51f57bd5ee686da1f085"
+  },
+  "_source": "git://github.com/obibring/flat-ui-colors-sass.git",
+  "_target": "*",
+  "_originalSource": "flat-colors",
+  "_direct": true
+}

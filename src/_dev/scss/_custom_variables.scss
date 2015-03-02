@@ -1,0 +1,34 @@
+// Variables
+$brand-primary:      $flat-belize-hole;
+$brand-success:      $flat-turquoise;
+$brand-info:         $flat-amethyst;
+$brand-warning:      $flat-orange;
+$brand-danger:       $flat-alizarin;
+
+$state-success-text: $brand-success !default;
+$state-success-bg:   $flat-emerald !default;
+
+$state-info-text:    $brand-info !default;
+$state-info-bg:      $flat-wisteria !default;
+
+$state-warning-text: $brand-warning !default;
+$state-warning-bg:   $flat-pumpkin !default;
+
+$state-danger-text:  $brand-danger !default;
+$state-danger-bg:    $flat-pomegranate !default;
+
+$hr-border:          $flat-silver;
+
+// Mixins
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+
+@mixin color-opacity($color, $opacity: 0.3) {
+    color: $color; /* The Fallback */
+    color: rgba($color, $opacity);
+}
+@function tint($color, $percent){
+    @return mix(white, $color, $percent);
+}

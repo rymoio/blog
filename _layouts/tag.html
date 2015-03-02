@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<!-- Start Header -->
+<header class="blog-header">
+    <h1 class="blog-title"><i class="fa fa-tags"></i> tags</h1>
+    <p class="lead blog-description">posts tagged with <span class="text-success"><strong>{{ page.filter_tag }}</strong></span></p>
+</header>
+<!-- End Header -->
+
+{% if site.tags.[page.filter_tag] %}
+
+<!-- Start Blog -->
+<section class="blog">
+{% for post in site.tags.[page.filter_tag] %}
+
+    <!-- Start Posts -->
+    {% include post-list.html %}
+    <!-- End Posts -->
+
+{% endfor %}
+</section>
+<!-- End Blog -->
+
+{% endif %}

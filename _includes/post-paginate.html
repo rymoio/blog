@@ -1,0 +1,15 @@
+<nav>
+    <ul class="pager">
+        {% if page.next %}
+        <li>
+            <a href="{{ page.next.url | prepend: site.baseurl }}">&larr; Newer</a>
+        </li>
+        {% endif %}
+
+        {% if page.previous %}
+        <li>
+            <a href="{{ page.previous.url | prepend: site.baseurl }}">Older &rarr;</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>

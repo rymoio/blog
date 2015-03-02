@@ -1,20 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" manifest="http://blog.rymo.io/blog.appcache" type="text/cache-manifest">
 
-  {% include head.html %}
+<!-- Start Head -->
+{% include head.html %}
+<!-- End Head -->
 
-  <body>
+<body>
 
-    {% include header.html %}
+	<!-- Start Container -->
+	<div class="container">
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
+		<!-- Start Navbar -->
+		{% include nav.html %}
+		<!-- End Navbar -->
 
-    {% include footer.html %}
+		<!-- Start Row -->
+		<div class="row">
 
-  </body>
+			<!-- Start Main -->
+			<div class="col-sm-8 blog-main">
 
+				<!-- Start Content -->
+				{{ content }}
+				<!-- End Content -->
+
+				<!-- Start Scroll -->
+				{% include scrolltop.html %}
+				<!-- End Scroll -->
+
+			</div>
+			<!-- End Main -->
+
+			<!-- Start Sidebar -->
+			{% include sidebar.html %}
+			<!-- End Sidebar -->
+
+		</div>
+		<!-- End Row -->
+
+	</div>
+	<!-- End Container -->
+
+	<!-- Start Footer -->
+	{% include footer.html %}
+	<!-- End Footer -->
+
+	<!-- Start JavaScripts -->
+	<script src="{{ "/assets/js/main.min.js" | prepend: site.baseurl }}"></script>
+	<!-- End JavaScripts -->
+
+</body>
 </html>

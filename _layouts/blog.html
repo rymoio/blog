@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+{{ content }}
+
+{% if paginator.posts %}
+
+<!-- Start Blog -->
+<section class="blog">
+{% for post in paginator.posts %}
+
+    <!-- Start Posts -->
+    {% include post-list.html %}
+    <!-- End Posts -->
+
+{% endfor %}
+</section>
+<!-- End Blog -->
+{% endif %}
+
+<!-- Start Pagination -->
+{% include paginate.html %}
+<!-- End Pagination -->

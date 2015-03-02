@@ -1,0 +1,19 @@
+{% if post.type == 'text' or page.type == 'text' %}
+    {% assign icon = 'fa-file-text-o' %}
+{% elsif post.type == 'quote' or page.type == 'quote' %}
+    {% assign icon = 'fa-quote-left' %}
+{% elsif post.type == 'photo' or page.type == 'photo' %}
+    {% assign icon = 'fa-camera-retro' %}
+{% elsif post.type == 'code' or page.type == 'code' %}
+    {% assign icon = 'fa-code' %}
+{% elsif post.type == 'link' or page.type == 'link' %}
+    {% assign icon = 'fa-link' %}
+{% else %}
+    {% assign icon = 'fa-file-text-o' %}
+{% endif %}
+
+
+<span class="fa-stack fa-lg blog-post-icon">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    <i class="fa {{ icon }} fa-fw fa-stack-1x fa-inverse"></i>
+</span>

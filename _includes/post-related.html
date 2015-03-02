@@ -1,0 +1,9 @@
+{% if site.related_posts %}
+<hr>
+<p class="lead">Try some related posts</p>
+<ol class="list-unstyled">
+    {% for post in site.related_posts limit:3 %}
+    <li><a class="blog-post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <span class="text-muted">{{ post.date | date: "%b %-d, %Y" }}</span></li>
+    {% endfor %}
+</ol>
+{% endif %}

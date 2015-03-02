@@ -1,0 +1,15 @@
+<nav>
+    <ul class="pager">
+        {% if paginator.previous_page %}
+        <li>
+            <a href="{% if paginator.previous_page == 1 %}/{% else %}{{ paginator.previous_page_path }}{% endif %}">&larr; Newer</a>
+        </li>
+        {% endif %}
+
+        {% if paginator.next_page %}
+        <li>
+            <a href="{{ paginator.next_page_path }}">Older &rarr;</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
