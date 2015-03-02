@@ -1,0 +1,31 @@
+<article class="blog-post">
+    {% include post-icon.html %}
+    <h2 class="blog-post-title"><a class="blog-post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+
+    <!-- Start Meta -->
+    <ul class="list-unstyled blog-post-meta">
+
+        <!-- Start Date -->
+        <li>
+            <i class="fa fa-fw fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }}
+        </li>
+        <!-- End Date -->
+
+        <!-- Start Tags -->
+        {% if post.tags.size > 0 %}
+        <li>
+            <i class="fa fa-fw fa-tag{% if post.tags.size > 1 %}s{% endif %}"></i>
+            {% for tag in post.tags %}
+            <a class="btn btn-default btn-xs" href="{{ site.tags.url }}{{ tag | slugify }}/" role="button">{{ tag }}</a>
+            {% endfor %}
+        </li>
+        {% endif %}
+        <!-- End Tags -->
+
+    </ul>
+    <!-- End Meta -->
+
+    <!-- Start Excerpt -->
+    <span class="blog-excerpt"><i class="fa fa-quote-left pull-left fa-border"></i></span> {{ post.excerpt }}
+    <!-- End Excerpt -->
+</article>

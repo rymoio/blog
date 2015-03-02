@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<!-- Start Header -->
+<header class="blog-header">
+    <h1 class="blog-title"><i class="fa fa-folder-open"></i> categories</h1>
+    <p class="lead blog-description">posts categorized as <span class="text-success"><strong>{{ page.filter_category }}</strong></span></p>
+</header>
+<!-- End Header -->
+
+{% if site.categories.[page.filter_category] %}
+
+<!-- Start Blog -->
+<section class="blog">
+{% for post in site.categories.[page.filter_category] %}
+
+    <!-- Start Posts -->
+    {% include post-list.html %}
+    <!-- End Posts -->
+
+{% endfor %}
+</section>
+<!-- End Blog -->
+
+{% endif %}

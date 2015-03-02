@@ -1,0 +1,352 @@
+// Import other Sass files
+@import "../../_lib/flat-colors/flat-colors";
+@import "custom_variables";
+@import "custom_bootstrap";
+// @import "custom_flatui";
+@import "../../_lib/fontawesome/scss/font-awesome";
+@import "../css/tomorrow.css";
+
+
+/*
+ * Globals
+ */
+
+body {
+    font-family: "Droid Sans", sans-serif;
+    color: $flat-wet-asphalt;
+    padding-top: 20px;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    margin-top: 0;
+    font-family: "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    color: $flat-midnight-blue;
+}
+
+pre,
+code {
+    font-family: "Source Code Pro", monospace;
+}
+
+a {
+    color: $flat-peter-river;
+
+    &:hover,
+    &:focus {
+        color: $flat-belize-hole;
+        text-decoration: none;
+    }
+}
+
+
+/*
+ * Override Bootstrap's default container.
+ */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+/*
+ * Nav
+ */
+
+.blog-nav {
+    // border-bottom: 1px solid $flat-asbestos;
+    // margin-bottom: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    h3 {
+        padding-bottom: 19px;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 40px;
+
+        a {
+            @include color-opacity($flat-asbestos, .75);
+
+            &:hover,
+            &:focus {
+                color: $flat-asbestos;
+                background-color: transparent;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.masthead-nav {
+    li {
+        display: inline-block;
+
+        &+ li {
+            margin-left: 20px;
+        }
+
+        a {
+            padding-right: 0;
+            padding-left: 0;
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 2px solid transparent;
+            @include color-opacity($flat-asbestos, .75);
+
+            &:hover,
+            &:focus {
+                color: $flat-asbestos;
+                background-color: transparent;
+                border-bottom-color: $flat-asbestos;
+            }
+        }
+
+        &.active {
+            a,
+            a:hover,
+            a:focus {
+                color: $flat-sunflower;
+                border-bottom-color: $flat-sunflower;
+            }
+        }
+    }
+}
+
+/*
+ * Blog name and description
+ */
+
+.blog-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.blog-title {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 50px;
+    font-weight: normal;
+}
+.blog-description {
+    font-size: 20px;
+    color: $flat-asbestos;
+}
+
+@media (max-width: $screen-xs-max) {
+    .blog-header {
+        text-align: center;
+    }
+    .blog-title {
+        font-size: 40px;
+    }
+}
+
+
+/*
+ * Main column and sidebar layout
+ */
+
+.blog-main {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Sidebar modules for boxing content */
+.blog-sidebar {
+    margin-top: 30px;
+}
+.sidebar-module {
+    padding: 15px;
+    margin: 0 -15px 15px;
+}
+.sidebar-module-inset {
+    padding: 15px;
+    background-color: $flat-clouds;
+    border-radius: 4px;
+}
+.sidebar-module-inset p:last-child,
+.sidebar-module-inset ul:last-child,
+.sidebar-module-inset ol:last-child {
+    margin-bottom: 0;
+}
+.blog-links {
+    .rss-subscribe i {
+        color: $flat-carrot;
+    }
+    .professional-landing-page i {
+        color: $flat-turquoise;
+    }
+    .blog-sitemap i {
+        color: $flat-amethyst;
+    }
+}
+.blog-tags a {
+    margin-bottom: 4px;
+}
+
+@media (max-width: $screen-xs-max) {
+    .sidebar-module-inset {
+        border-radius: 0;
+    }
+}
+
+
+/* Pagination */
+.pager {
+    margin-bottom: 60px;
+    padding-left: 20px;
+    text-align: left;
+}
+.pager > li > a {
+    width: 140px;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+
+/*
+ * Blog posts
+ */
+
+.blog-post {
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-left: 2px solid $flat-silver;
+
+    .blog-post-icon {
+        color: $flat-silver;
+        left: -45px;
+        top: -5px;
+    }
+}
+.blog-post-title {
+    margin-bottom: 5px;
+    font-size: 40px;
+}
+.blog-post-link {
+    color: $flat-turquoise;
+
+    &:hover,
+    &:focus {
+        color: $flat-green-sea;
+        text-decoration: none;
+    }
+}
+.blog-post-meta {
+    margin-bottom: 20px;
+    color: $flat-asbestos;
+}
+.blog-excerpt {
+    color: $flat-asbestos;
+}
+
+@media (max-width: $screen-xs-max) {
+    .blog-post {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+
+/*
+ * Scroll to top
+ */
+
+.scrollToTop {
+    bottom: 150px;
+    right: 10px;
+    position: fixed;
+    color: $flat-sunflower;
+    display: none;
+    z-index: 1500;
+
+    .h4 {
+        vertical-align: super;
+        color: $flat-asbestos;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: $flat-orange;
+    }
+
+    &:visited,
+    &:active {
+        color: $flat-sunflower;
+    }
+}
+
+
+/*
+ * Footer
+ */
+
+.blog-footer {
+    padding: 40px 0;
+    color: $flat-silver;
+    text-align: center;
+    background-color: $flat-clouds;
+    border-top: 1px solid $flat-silver;
+
+    .social a {
+        color: $flat-silver;
+
+        &:hover,
+        &:focus {
+            &.google {
+                @include color-opacity($flat-alizarin, .7);
+            }
+            &.linkedin {
+                @include color-opacity($flat-belize-hole, .7);
+            }
+            &.github {
+                @include color-opacity($flat-midnight-blue, .7);
+            }
+            &.twitter {
+                @include color-opacity($flat-peter-river, .7);
+            }
+            &.email {
+                @include color-opacity($flat-sunflower, .7);
+            }
+        }
+    }
+}
+.blog-footer p:last-child {
+    margin-bottom: 0;
+}
+
+/*
+ * Custom Highlight
+ */
+
+.highlight pre {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    white-space: pre;
+    overflow: auto;
+
+    code {
+        white-space: pre;
+        overflow: auto;
+    }
+}
+.linenodiv pre {
+    color: $flat-wet-asphalt;
+    background: $flat-clouds;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    text-align: right;
+    width: 40px;
+}
+.code {
+    width: 100%;
+}

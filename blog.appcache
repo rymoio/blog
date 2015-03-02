@@ -1,0 +1,18 @@
+---
+---
+CACHE MANIFEST
+# v1.0 | {{ site.time | date_to_xmlschema }}
+
+# stylesheets
+/assets/css/main.min.css
+
+# javascripts
+/assets/js/min/main.min.js
+
+# fonts
+/assets/fonts/fontawesome-webfont.ttf
+
+# images
+
+NETWORK:
+*

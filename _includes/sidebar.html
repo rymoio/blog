@@ -1,0 +1,67 @@
+<!-- Start Sidebar -->
+<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+    <!-- Start About -->
+    <div class="sidebar-module sidebar-module-inset">
+        <h4>About</h4>
+        <p>My passions are family, technology and the outdoors.</p>
+        <p>You can find me rock climbing, fly fishing, stand up paddleboarding, building web apps, contributing to open source projects, snapping pictures, or cooking in the kitchen.</p>
+    </div>
+    <!-- End About -->
+
+    <!-- Start Links -->
+    <div class="sidebar-module blog-links">
+        <h4>links</h4>
+        <ol class="list-unstyled">
+            <li class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a> <i class="fa fa-lg fa-fw fa-rss-square"></i></li>
+            <li class="professional-landing-page">professional <a href="http://ryancmorrissey.com">landing page</a> <i class="fa fa-lg fa-fw fa-external-link-square"></i></li>
+            <li class="blog-sitemap">visit <a href="{{ "/sitemap/" | prepend: site.baseurl }}">the sitemap</a> <i class="fa fa-lg fa-fw fa-sitemap"></i></li>
+        </ol>
+    </div>
+    <!-- End Links -->
+
+    <!-- Start Tags -->
+    {% if site.tags %}
+    <h4>Tags</h4>
+    <div class="sidebar-module blog-tags">
+        {% for tag in site.sorted_tags %}
+        <a href="{{ site.tags.url | prepend: site.baseurl }}{{ tag.first | slugify }}/" class="btn {% if page.filter_tag == tag.first %}btn-success{% else %}btn-default{% endif %} btn-xs" role="button">
+            {{ tag | first }} <span class="badge">{{ tag | last | size }}</span>
+        </a>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <!-- End Tags -->
+
+    <!-- Start Archives -->
+    {% if site.posts %}
+    <h4>Archives</h4>
+    <div class="sidebar-module blog-archive">
+        <div class="row">
+            <div class="col-xs-6 col-md-12">
+                <h5>months</h5>
+                <ol class="list-unstyled">
+                    {% for post in site.posts %}
+                        {% capture year %}{{ post.date | date: '%B %Y' }}{% endcapture %}
+                        {% capture nyear %}{{ post.next.date | date: '%B %Y' }}{% endcapture %}
+                        {% if year != nyear %}
+                            <li><a href="{{ site.monthly_archive.path | prepend: site.baseurl }}{{ post.date | date: '%Y/%m' }}/">{{ post.date | date: '%B %Y' }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="col-xs-6 col-md-12">
+                {% if site.categories %}
+                <h5>categories</h5>
+                <ol class="list-unstyled">
+                    {% for category in site.sorted_categories %}
+                        <li><a href="{{ site.categories.url | prepend: site.baseurl }}{{ category.first | slugify }}/">{{ category | first | downcase }}</a></li>
+                    {% endfor %}
+                </ol>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <!-- End Archives -->
+</div>

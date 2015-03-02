@@ -1,14 +1,74 @@
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+title:            blog.rymo.io
+email:            author@blog.rymo.io
+description:      > # this means to ignore newlines until "baseurl:"
+                  Write an awesome description for your new site here. You can edit this
+                  line in _config.yml. It will appear in your document head meta (for
+                  Google search results) and in your feed.xml site description.
+baseurl:          "" # the subpath of your site, e.g. /blog/
+url:              "http://blog.rymo.io" # the base hostname & protocol for your site
+twitter_username: rymoio
+github_username:  rymoio
 
-# Build settings
-markdown: kramdown
+# Handling Reading
+safe:         false
+future:       false
+show_drafts:  false
+include:      [".htaccess"]
+exclude:      ["README.md", "LICENSE", "bower.json", ".bowerrc", ".gitignore", "package.json", "src", ".sass_cache", "node_modules"]
+keep_files:   [".git"]
+encoding:     "utf-8"
+markdown_ext: "md,markdown,mkdown,mkdn,mkd"
+timezone:     America/New_York
+
+# Conversion
+markdown:          kramdown
+highlighter:       pygments
+lsi:               false
+
+kramdown:
+  auto_ids:       true
+  footnote_nr:    1
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  enable_coderay: true
+
+  coderay:
+    coderay_wrap:              div
+    coderay_line_numbers:      inline
+    coderay_line_number_start: 1
+    coderay_tab_width:         4
+    coderay_bold_every:        10
+    coderay_css:               style
+
+# Plugins
+whitelist: []
+gems:      []
+
+# Outputting
+permalink:           /:year/:month/:title
+relative_permalinks: true
+paginate_path:       /page:num
+paginate:            5
+
+
+# Category and Tag pages
+categories:
+  url: /categories/
+  title_prefix: "category: "
+  layout: category.html
+tags:
+  url: /tags/
+  title_prefix: "tag: "
+  layout: tag.html
+
+# Jekyll archives
+monthly_archive:
+  layout: month
+  path: /archives/
+
+
+# Humanize
+humanize:
+  date_format: "%m %b %Y"

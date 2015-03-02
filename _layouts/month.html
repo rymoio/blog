@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<!-- Start Header -->
+<header class="blog-header">
+    <h1 class="blog-title"><i class="fa fa-archive"></i> archives</h1>
+    <p class="lead blog-description">all posts dated <span class="text-success"><strong>{{ page.date | date: "%B %Y" }}</strong></span></p>
+</header>
+<!-- End Header -->
+{% if page.posts %}
+    {% for post in page.posts %}
+        <!-- Start Posts -->
+        {% include post-list.html %}
+        <!-- End Posts -->
+    {% endfor %}
+{% endif %}
