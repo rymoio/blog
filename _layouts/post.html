@@ -3,30 +3,45 @@ layout: default
 ---
 <article class="blog-post">
     {% include post-icon.html %}
-    <h2 class="blog-post-title">{{ page.title }}</h2>
+    <h1 class="blog-post-title">{{ page.title }}</h1>
 
     <!-- Start Meta -->
-    <ul class="list-unstyled blog-post-meta">
-
-        <!-- Start Date -->
-        <li>
+    <div class="row blog-post-meta">
+        <div class="col-xs-6 col-sm-4">
+            <!-- Start Date -->
             <i class="fa fa-fw fa-calendar"></i> {{ page.date | date: "%b %-d, %Y" }}
-        </li>
-        <!-- End Date -->
+            <!-- End Date -->
+        </div>
+
+        <div class="col-xs-6 col-sm-4">
+            <!-- Start Reading Time -->
+            <i class="fa fa-fw fa-clock-o"></i> {{ page.content | reading_time }}
+            <!-- End Reading Time -->
+        </div>
+
+        <!-- Optional: clear the XS cols if their content doesn't match in height -->
+        <div class="clearfix visible-xs-block"></div>
+
+        <div class="col-xs-6 col-sm-4">
+            <!-- Start Disqus Count -->
+            <div class="disqus-count"><i class="fa fa-fw fa-comments"></i> <a href="{{ page.url | append: '#disqus_thread' | prepend: site.baseurl }}" data-disqus-url="{{ page.url | prepend: site.baseurl }}" data-disqus-identifier="{{ page.id }}"></a></div>
+            <!-- End Disqus Count -->
+        </div>
+
+        <!-- Optional: clear the XS cols if their content doesn't match in height -->
+        <div class="clearfix visible-xs-block"></div>
 
         <!-- Start Tags -->
         {% if page.tags.size > 0 %}
-        <li></li>
-        <li>
+        <div class="col-xs-12 col-sm-12">
             <i class="fa fa-fw fa-tag{% if page.tags.size > 1 %}s{% endif %}"></i>
             {% for tag in page.tags %}
             <a class="btn btn-default btn-xs" href="{{ site.tags.url }}{{ tag | slugify }}/" role="button">{{ tag }}</a>
             {% endfor %}
-        </li>
+        </div>
         {% endif %}
         <!-- End Tags -->
-
-    </ul>
+    </div>
     <!-- End Meta -->
 
     <!-- Start Content -->
@@ -44,3 +59,7 @@ layout: default
 <!-- Start Footer -->
 {% include post-paginate.html %}
 <!-- End Footer -->
+
+<!-- Start Disqus Comments -->
+{% include disqus-comment.html %}
+<!-- End Disqus Comments -->

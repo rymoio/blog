@@ -61,8 +61,6 @@ a {
  */
 
 .blog-nav {
-    // border-bottom: 1px solid $flat-asbestos;
-    // margin-bottom: 30px;
     padding-right: 15px;
     padding-left: 15px;
 
@@ -155,7 +153,12 @@ a {
 
 .blog-main {
     font-size: 18px;
-    line-height: 1.5;
+    line-height: 1.75;
+
+    h2, h3, h4, h5, h6 {
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
 }
 
 /* Sidebar modules for boxing content */
@@ -176,6 +179,9 @@ a {
 .sidebar-module-inset ol:last-child {
     margin-bottom: 0;
 }
+.blog-profile {
+    padding: 40px;
+}
 .blog-links {
     .rss-subscribe i {
         color: $flat-carrot;
@@ -194,6 +200,11 @@ a {
 @media (max-width: $screen-xs-max) {
     .sidebar-module-inset {
         border-radius: 0;
+    }
+}
+@media (min-width: $screen-lg-min) {
+    .blog-profile {
+        padding: 15px;
     }
 }
 
@@ -349,4 +360,24 @@ a {
 }
 .code {
     width: 100%;
+}
+
+/*
+ * Disqus
+ */
+
+.disqus-count {
+    a {
+        color: $flat-asbestos;
+
+        &:hover,
+        &:focus {
+            color: $flat-asbestos;
+            background-color: transparent;
+            text-decoration: none;
+        }
+    }
+}
+.disqus_thread {
+    margin-bottom: 50px;
 }

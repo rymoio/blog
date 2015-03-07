@@ -1,10 +1,10 @@
 # Site settings
 title:            blog.rymo.io
 email:            author@blog.rymo.io
-description:      > # this means to ignore newlines until "baseurl:"
-                  Write an awesome description for your new site here. You can edit this
-                  line in _config.yml. It will appear in your document head meta (for
-                  Google search results) and in your feed.xml site description.
+description:      > # This is the personal blog of Ryan Morrissey. My passions are family,
+                  technology and the outdoors. You can find me rock climbing, fly fishing,
+                  stand up paddleboarding, building web apps, contributing to open source
+                  projects, snapping pictures, or cooking in the kitchen.
 baseurl:          "" # the subpath of your site, e.g. /blog/
 url:              "http://blog.rymo.io" # the base hostname & protocol for your site
 twitter_username: rymoio

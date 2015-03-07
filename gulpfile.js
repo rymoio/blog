@@ -38,7 +38,6 @@ gulp.task('javascript', function() {
     var jsFiles = [
         'src/_lib/jquery/dist/jquery.js',
         'src/_lib/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
-        'src/_lib/bootstrap-sass/assets/javascripts/bootstrap/affix.js',
         'src/_lib/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
         'src/_lib/zeroclipboard/dist/ZeroClipboard.js',
         'src/_dev/js/main.js'
@@ -81,7 +80,9 @@ gulp.task('sass',function() {
 
 // Task :: Images
 gulp.task('images', function () {
-    var imgFiles = [];
+    var imgFiles = [
+        'src/_dev/img/profile_picture.jpg'
+    ];
     return gulp.src(imgFiles)
         .pipe(plugins.imagemin({
             progressive: true,
